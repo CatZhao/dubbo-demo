@@ -1,0 +1,24 @@
+dubbo:
+  application:
+    name: demo-service
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: nacos://${nacos.host:127.0.0.1}:8848
+#    address: zookeeper://${zookeeper.address:127.0.0.1}:2181
+csp:
+  sentinel:
+    dashboard:
+      server: localhost:8080
+    api:
+      port: 18719
+# project.name不支持用 yaml 或者 properties，必须用启动参数或环境变量方式
+#project:
+#  name: ${dubbo.application.name}
+sentinel:
+  dashboard:
+    auth:
+      username: sentinel
+      password: sentinel
+
